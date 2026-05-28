@@ -15,20 +15,22 @@ export default function Home() {
 
   return (
     <div className="min-vh-100 bg-dark text-gold">
-      {/* Hero */}
-      <header
-        className="text-center py-5 shadow-lg"
-        style={{
-          backgroundColor: "black",
-          borderRadius: "20px", // floating rounded header
-          margin: "20px",
-          boxShadow: "0 8px 20px rgba(0,0,0,0.6)"
-        }}
-      >
-        <h1 className="fw-bold">{portfolio.name}</h1>
-        <h3 className="fw-light">{portfolio.title}</h3>
-        <p className="mt-3">{portfolio.profile}</p>
-      </header>
+  {/* Hero */}
+    <header
+    className="text-center py-5 shadow-lg"
+      style={{
+        backgroundColor: "black",   // black background
+        borderRadius: "20px",       // floating rounded header
+        margin: "20px",
+        boxShadow: "0 8px 20px rgba(0,0,0,0.6)",
+        color: "gold"               // gold text
+          }}
+>
+  <h1 className="fw-bold">{portfolio.name}</h1>
+  <h3 className="fw-light">{portfolio.title}</h3>
+  <p className="mt-3">{portfolio.profile}</p>
+  </header>
+
 
       <main className="container py-5">
       {/* Skills as pill cards */}
