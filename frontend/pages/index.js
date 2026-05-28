@@ -48,23 +48,29 @@ export default function Home() {
             ))}
           </ul>
         </section>
+          {/* Projects */}
+<section className="mb-5">
+  <h2 className="text-success mb-3 text-center">Projects</h2>
+  <div className="row justify-content-center">
+{portfolio.projects.map((p, i) => (
+  <div key={i} className="col-md-6 mb-4">
+  <div
+  className="shadow-lg p-4 text-center"
+  style={{
+    backgroundColor: "#0d6efd",
+    color: "white",
+    borderRadius: "50px",   // pill shape
+    boxShadow: "0 4px 12px rgba(0,0,0,0.4)"
+  }}
+>
+  <h5 className="fw-bold mb-2">{p.title}</h5>
+  <p className="mb-0">{p.description}</p>
+  </div>
+  </div>
+  ))}
+    </div>
+    </section>
 
-        {/* Projects */}
-        <section className="mb-5">
-          <h2 className="text-success mb-3 text-center">Projects</h2>
-          <div className="row">
-            {portfolio.projects.map((p, i) => (
-              <div key={i} className="col-md-6 mb-4">
-                <div className="card h-100 shadow-lg" style={{ backgroundColor: "#0d6efd", color: "white" }}>
-                  <div className="card-body">
-                    <h5 className="card-title fw-bold">{p.title}</h5>
-                    <p className="card-text">{p.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
 
         {/* Contact */}
         <section className="text-center">
