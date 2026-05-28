@@ -16,21 +16,34 @@ export default function Home() {
   return (
     <div className="min-vh-100 bg-dark text-white">
       {/* Hero */}
-      <header className="text-center py-5 shadow" style={{ backgroundColor: "magenta" }}>
+      <header
+        className="text-center py-5 shadow-lg"
+        style={{
+          backgroundColor: "magenta",
+          borderRadius: "20px", // floating rounded header
+          margin: "20px",
+          boxShadow: "0 8px 20px rgba(0,0,0,0.6)"
+        }}
+      >
         <h1 className="fw-bold">{portfolio.name}</h1>
         <h3 className="fw-light">{portfolio.title}</h3>
         <p className="mt-3">{portfolio.profile}</p>
       </header>
 
       <main className="container py-5">
-        {/* Skills */}
+        {/* Skills as pills */}
         <section className="mb-5 text-center">
           <h2 className="text-info mb-3">Skills</h2>
           {portfolio.skills.map((s, i) => (
             <span
               key={i}
               className="badge rounded-pill me-2 mb-2 fs-6 shadow-sm"
-              style={{ backgroundColor: "cyan", color: "black" }}
+              style={{
+                backgroundColor: "cyan",
+                color: "black",
+                padding: "10px 20px",
+                fontWeight: "500"
+              }}
             >
               {s}
             </span>
@@ -48,29 +61,33 @@ export default function Home() {
             ))}
           </ul>
         </section>
-          {/* Projects */}
-<section className="mb-5">
-  <h2 className="text-success mb-3 text-center">Projects</h2>
-  <div className="row justify-content-center">
-{portfolio.projects.map((p, i) => (
-  <div key={i} className="col-md-6 mb-4">
-  <div
-  className="shadow-lg p-4 text-center"
-  style={{
-    backgroundColor: "#0d6efd",
-    color: "white",
-    borderRadius: "50px",   // pill shape
-    boxShadow: "0 4px 12px rgba(0,0,0,0.4)"
-  }}
->
-  <h5 className="fw-bold mb-2">{p.title}</h5>
-  <p className="mb-0">{p.description}</p>
-  </div>
-  </div>
-  ))}
-    </div>
-    </section>
 
+        {/* Projects as floating advanced cards */}
+        <section className="mb-5">
+          <h2 className="text-success mb-3 text-center">Projects</h2>
+          <div className="row">
+            {portfolio.projects.map((p, i) => (
+              <div key={i} className="col-md-6 mb-4">
+                <div
+                  className="shadow-lg p-4 h-100"
+                  style={{
+                    background: "linear-gradient(135deg, #0d6efd, #20c997)",
+                    color: "white",
+                    borderRadius: "20px",
+                    boxShadow: "0 10px 25px rgba(0,0,0,0.5)",
+                    transform: "translateY(0)",
+                    transition: "transform 0.3s ease"
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-10px)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
+                >
+                  <h5 className="fw-bold mb-2">{p.title}</h5>
+                  <p className="mb-0">{p.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
         {/* Contact */}
         <section className="text-center">
