@@ -31,24 +31,30 @@ export default function Home() {
       </header>
 
       <main className="container py-5">
-        {/* Skills as pills */}
+      {/* Skills as pill cards */}
         <section className="mb-5 text-center">
-          <h2 className="text-info mb-3">Skills</h2>
-          {portfolio.skills.map((s, i) => (
-            <span
-              key={i}
-              className="badge rounded-pill me-2 mb-2 fs-6 shadow-sm"
-              style={{
-                backgroundColor: "cyan",
-                color: "black",
-                padding: "10px 20px",
-                fontWeight: "500"
-              }}
-            >
-              {s}
-            </span>
-          ))}
-        </section>
+        <h2 className="text-info mb-3">Skills</h2>
+        <div className="row justify-content-center">
+      {portfolio.skills.map((s, i) => (
+        <div key={i} className="col-md-4 mb-3">
+        <div
+        className="shadow-sm d-flex justify-content-center align-items-center"
+        style={{
+          backgroundColor: "cyan",
+          color: "black",
+          borderRadius: "50px",   // pill shape
+          padding: "15px 25px",
+          fontWeight: "500",
+          boxShadow: "0 6px 12px rgba(0,0,0,0.3)"
+        }}
+>
+{s}
+</div>
+  </div>
+  ))}
+    </div>
+    </section>
+
 
         {/* Qualifications */}
         <section className="mb-5">
