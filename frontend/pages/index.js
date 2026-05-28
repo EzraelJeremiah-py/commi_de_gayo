@@ -61,33 +61,33 @@ export default function Home() {
             ))}
           </ul>
         </section>
+          {/* Projects */}
+<section className="mb-5">
+  <h2 className="text-success mb-3 text-center">Projects</h2>
+  <div className="row justify-content-center">
+{portfolio.projects.map((p, i) => (
+  <div key={i} className="col-md-6 mb-4">
+  <div
+  className="shadow-lg h-100 d-flex flex-column justify-content-center align-items-center text-center"
+  style={{
+    background: "linear-gradient(135deg, #0d6efd, #20c997)",
+    color: "white",
+    borderRadius: "20px",
+    padding: "30px",              // ensures text is inside
+    boxShadow: "0 10px 25px rgba(0,0,0,0.5)",
+    transition: "transform 0.3s ease"
+  }}
+onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-10px)")}
+onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
+>
+  <h5 className="fw-bold mb-3">{p.title}</h5>
+  <p className="mb-0">{p.description}</p>
+  </div>
+  </div>
+  ))}
+    </div>
+    </section>
 
-        {/* Projects as floating advanced cards */}
-        <section className="mb-5">
-          <h2 className="text-success mb-3 text-center">Projects</h2>
-          <div className="row">
-            {portfolio.projects.map((p, i) => (
-              <div key={i} className="col-md-6 mb-4">
-                <div
-                  className="shadow-lg p-4 h-100"
-                  style={{
-                    background: "linear-gradient(135deg, #0d6efd, #20c997)",
-                    color: "white",
-                    borderRadius: "20px",
-                    boxShadow: "0 10px 25px rgba(0,0,0,0.5)",
-                    transform: "translateY(0)",
-                    transition: "transform 0.3s ease"
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-10px)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
-                >
-                  <h5 className="fw-bold mb-2">{p.title}</h5>
-                  <p className="mb-0">{p.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
 
         {/* Contact */}
         <section className="text-center">
