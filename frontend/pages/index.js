@@ -14,12 +14,12 @@ export default function Home() {
   if (!portfolio) return <p className="text-center mt-5">Loading...</p>;
 
   return (
-    <div className="min-vh-100 bg-dark text-white">
+    <div className="min-vh-100 bg-dark text-gold">
       {/* Hero */}
       <header
         className="text-center py-5 shadow-lg"
         style={{
-          backgroundColor: "magenta",
+          backgroundColor: "black",
           borderRadius: "20px", // floating rounded header
           margin: "20px",
           boxShadow: "0 8px 20px rgba(0,0,0,0.6)"
